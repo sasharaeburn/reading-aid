@@ -11,35 +11,38 @@
 </head>
 <body>
 
-<div class="container text-center page_wrap">
+<div class="container text-center page-wrap">
     <h1>How long will it take to read this book?</h1>
 
     <div class="row justify-content-md-center" >
         <div class="col col-md-10 col-lg-8 col-xl-6">
-            <form id="calculate_total">
+            <form id="calculate-total">
 
                 <div class="form-group">
-                    <label for="book_length">How long is the book?</label>
-                    <input type="number" class="form-control" id="book_length" min="1" max="15000" required
-                           oninvalid="this.setCustomValidity('Please enter the number of pages in the book')"
+                    <label for="book-length">How long is the book?</label>
+                    <input type="number" class="form-control" id="book-length" min="1" max="15000" required
+                           oninvalid="this.setCustomValidity('Oops! The number of pages should be between 1 and 15000.')"
                            oninput="setCustomValidity('')" placeholder="Enter the number of pages in the book">
                 </div>
 
                 <div class="form-group">
-                    <label for="reading_amount">How much do you read?</label>
-                    <input type="number" class="form-control" id="reading_amount" min="1" max="15000" required
-                           oninvalid="this.setCustomValidity('Please enter the number of pages you normally read in a day')"
-                           oninput="setCustomValidity('')" placeholder="Enter the approximate number of pages you read in a day">
+                    <label for="reading-amount">How much do you read in a day?</label>
+                    <input type="number" class="form-control" id="reading-amount" min="1" required
+                           oninvalid="this.setCustomValidity('It`s good to read more than zero pages a day ;)')"
+                           oninput="setCustomValidity('')" placeholder="Enter the approximate number of pages you read daily">
 
                 </div>
 
-                <div class="button_container">
+                <div class="button-container">
                     <button class="btn btn-outline-success" type="submit">Calculate</button>
                 </div>
             </form>
         </div>
 
-        <div id="result" class="result"></div>
+        <div class="col col-md-12">
+            <div id="result" class="result"></div>
+        </div>
+
     </div>
 </div>
 
