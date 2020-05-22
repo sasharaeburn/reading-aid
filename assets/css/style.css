@@ -1,0 +1,40 @@
+body {
+  font-family: "Lora", serif;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.page-wrap {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+@media (min-width: 1000px) {
+  .page-wrap {
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+  }
+}
+.form-group {
+  margin-bottom: 3vh;
+}
+
+@media (min-width: 1000px) {
+  .form-group {
+    margin-top: 6vh;
+  }
+}
+.result {
+  margin-top: 3vh;
+}
+
+@media (min-width: 1000px) {
+  .result {
+    margin-top: 4vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
