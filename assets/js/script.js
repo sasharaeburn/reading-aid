@@ -3,7 +3,9 @@ form.addEventListener('submit', event => {
     event.preventDefault();
 
     let result = calculateNeededTime();
-    displayResult(result);
+    let displayMessage = getDisplayMessage(result);
+
+    displayResult(displayMessage);
 })
 
 function getBookLength() {
@@ -17,18 +19,25 @@ function calculateNeededTime() {
     return bookLength / readingAmount;
 }
 
-function displayResult(result) {
-    let showResult = document.getElementById('result');
+function getDisplayMessage(result) {
     let bookLength = getBookLength();
 
-    if (bookLength >= 700 && result > 1) {
-        showResult.innerHTML = "Wow, that's a long book! It will take you approximately " + Math.ceil(result) + ' days to finish it.'
-    } else if (bookLength < 700 && result > 1) {
-        showResult.innerHTML = 'It will take you approximately ' + Math.ceil(result) + ' days to finish this book.';
-    } else if (bookLength >= 700 && result === 1) {
-        showResult.innerHTML = "Wow, that's a long book! However, it will take you only one day to finish it.";
-    } else {
-        showResult.innerHTML = "Seems like you can finish this book in one day.";
+    if(result > 1) {
+        if(bookLength >= 700) {
+            return "Wow, that's a long book! It will take you approximately " + Math.ceil(result) + ' days to finish it.'
+        }
+        return 'It will take you approximately ' + Math.ceil(result) + ' days to finish this book.';
     }
+
+    if(result === 1) {
+        if(bookLength >= 700) {
+            return "Wow, that's a long book! However, it will take you only one day to finish it.";
+        }
+    }
+
+    return "Seems like you can finish this book in one day.";
 }
 
+function displayResult(text) {
+    document.getElementById('result').innerHTML = text;
+}
