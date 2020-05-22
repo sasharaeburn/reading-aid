@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Reading aid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>How long will it take to read this book?</h1>
-<div class="container">
-    <div class="calculator">
-        <form id="calculate_total">
 
-            <div class="form_field">
-                <label for="book_length">How long is the book?</label>
-                <input type="number" class="answer_area" id="book_length" min="1" max="15000" required>
-                pages
-            </div>
+<div class="container text-center page_wrap">
+    <h1>How long will it take to read this book?</h1>
 
-            <div class="form_field">
-                <label for="reading_amount">How many pages do you normally read in a day?</label>
-                <input type="number" class="answer_area" id="reading_amount" min="1" max="15000" required>
-                pages
-            </div>
+    <div class="row justify-content-md-center" >
+        <div class="col col-md-10 col-lg-8 col-xl-6">
+            <form id="calculate_total">
 
-            <div class="button_container">
-                <button type="submit" class="calculate_days">Calculate</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="book_length">How long is the book?</label>
+                    <input type="number" class="form-control" id="book_length" min="1" max="15000" required
+                           oninvalid="this.setCustomValidity('Please enter the number of pages in the book')"
+                           oninput="setCustomValidity('')" placeholder="Enter the number of pages in the book">
+                </div>
 
-        <div class="result" id="result"></div>
+                <div class="form-group">
+                    <label for="reading_amount">How much do you read?</label>
+                    <input type="number" class="form-control" id="reading_amount" min="1" max="15000" required
+                           oninvalid="this.setCustomValidity('Please enter the number of pages you normally read in a day')"
+                           oninput="setCustomValidity('')" placeholder="Enter the approximate number of pages you read in a day">
+
+                </div>
+
+                <div class="button_container">
+                    <button class="btn btn-outline-success" type="submit">Calculate</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="result" class="result"></div>
     </div>
 </div>
 

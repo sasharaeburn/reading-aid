@@ -2,7 +2,7 @@ let form = document.getElementById('calculate_total');
 form.addEventListener('submit', event => {
     event.preventDefault();
 
-    let result = calculateNeededTime();
+    let result = Math.ceil(calculateNeededTime());
     displayResult(result);
 })
 
