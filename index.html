@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading aid</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap">
+</head>
+<body>
+<h1>How long will it take to read this book?</h1>
+<div class="container">
+    <div class="calculator">
+        <form id="calculate_total">
+
+            <div class="form_field">
+                <label for="num_of_pgs">How long is the book?</label>
+                <input type="number" class="answer_area" id="num_of_pgs" min="1" max="15000" required>
+                pages
+            </div>
+
+            <div class="form_field">
+                <label for="reading_amount">How many pages do you normally read in a day?</label>
+                <input type="number" class="answer_area" id="reading_amount" min="1" max="15000" required>
+                pages
+            </div>
+
+            <div class="button_container">
+                <button type="submit" class="calculate_days">Calculate</button>
+            </div>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>
